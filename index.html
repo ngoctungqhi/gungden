@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./assets/logo.png">
+    <title>Gừng Đen Volten - Chăm Sóc Sức Khỏe Toàn Diện</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#8B4789',
+                        secondary: '#E91E63',
+                        accent: '#FFB300',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans antialiased overflow-x-hidden">
+    
+    <!-- Navigation -->
+    <nav class="fixed w-full top-0 z-50 bg-white/95 backdrop-blur-sm shadow-md transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="logo-container">
+                    <img src="./assets/logo.png" alt="Volten Logo" class="h-12 animate-fade-in">
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link text-gray-700 hover:text-primary transition-colors duration-300">Trang chủ</a>
+                    <a href="#about" class="nav-link text-gray-700 hover:text-primary transition-colors duration-300">Về sản phẩm</a>
+                    <a href="#benefits" class="nav-link text-gray-700 hover:text-primary transition-colors duration-300">Lợi ích</a>
+                    <a href="#products" class="nav-link text-gray-700 hover:text-primary transition-colors duration-300">Sản phẩm</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-primary transition-colors duration-300">Liên hệ</a>
+                </div>
+                <button class="md:hidden text-gray-700" id="mobile-menu-btn">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="mobile-menu hidden md:hidden bg-white shadow-lg" id="mobile-menu">
+            <div class="container mx-auto px-4 py-4 flex flex-col space-y-4">
+                <a href="#home" class="nav-link text-gray-700 hover:text-primary transition-colors duration-300">Trang chủ</a>
+                <a href="#about" class="nav-link text-gray-700 hover:text-primary transition-colors duration-300">Về sản phẩm</a>
+                <a href="#benefits" class="nav-link text-gray-700 hover:text-primary transition-colors duration-300">Lợi ích</a>
+                <a href="#products" class="nav-link text-gray-700 hover:text-primary transition-colors duration-300">Sản phẩm</a>
+                <a href="#contact" class="nav-link text-gray-700 hover:text-primary transition-colors duration-300">Liên hệ</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+        <div class="hero-background absolute inset-0 bg-gradient-to-br from-purple-100 via-pink-50 to-yellow-50"></div>
+        <div class="hero-shapes absolute inset-0">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="hero-content">
+                    <div class="inline-block mb-4 px-4 py-2 bg-primary/10 rounded-full animate-fade-in-up" style="animation-delay: 0.1s">
+                        <span class="text-primary font-semibold">✨ Sản phẩm chất lượng cao</span>
+                    </div>
+                    <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight animate-fade-in-up" style="animation-delay: 0.2s">
+                        Gừng Đen <span class="text-primary">Volten</span><br>
+                        <span class="text-3xl md:text-4xl text-gray-700">Chăm Sóc Sức Khỏe Toàn Diện</span>
+                    </h1>
+                    <p class="text-xl text-gray-600 mb-8 animate-fade-in-up" style="animation-delay: 0.3s">
+                        Sản phẩm từ gừng đen nguyên chất, giúp tăng cường miễn dịch và cải thiện sức khỏe toàn diện
+                    </p>
+                    
+                    <!-- Key Benefits List -->
+                    <div class="mb-8 space-y-3 animate-fade-in-up" style="animation-delay: 0.35s">
+                        <div class="flex items-start space-x-3">
+                            <i class="fas fa-check-circle text-primary text-xl mt-1"></i>
+                            <p class="text-gray-700 text-lg">Tăng cường miễn dịch, lưu thông máu với gừng đen.</p>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <i class="fas fa-check-circle text-primary text-xl mt-1"></i>
+                            <p class="text-gray-700 text-lg">Thảo dược quý giúp cải thiện tiêu hóa, giảm viêm.</p>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <i class="fas fa-check-circle text-primary text-xl mt-1"></i>
+                            <p class="text-gray-700 text-lg">Bảo vệ sức khỏe, chống oxy hóa với gừng đen.</p>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <i class="fas fa-check-circle text-primary text-xl mt-1"></i>
+                            <p class="text-gray-700 text-lg">Khỏe mạnh mỗi ngày cùng gừng đen nguyên chất.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-wrap gap-4 animate-fade-in-up" style="animation-delay: 0.4s">
+                        <a href="#products" class="btn-primary px-8 py-4 bg-primary text-white rounded-full font-semibold hover:bg-primary/90 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
+                            <i class="fas fa-shopping-cart mr-2"></i>Đặt hàng ngay
+                        </a>
+                        <a href="#about" class="btn-secondary px-8 py-4 bg-white text-primary rounded-full font-semibold hover:bg-gray-50 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl border-2 border-primary">
+                            <i class="fas fa-info-circle mr-2"></i>Tìm hiểu thêm
+                        </a>
+                    </div>
+                    <div class="mt-12 flex items-center space-x-8 animate-fade-in-up" style="animation-delay: 0.5s">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-primary">100K+</div>
+                            <div class="text-gray-600">Khách hàng</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-primary">4.9★</div>
+                            <div class="text-gray-600">Đánh giá</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-primary">50+</div>
+                            <div class="text-gray-600">Sản phẩm</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image relative animate-fade-in-right">
+                    <div class="floating-card">
+                        <div class="relative">
+                            <img src="./assets/person.png" alt="Gừng Đen" class="rounded-3xl shadow-2xl">
+                            <img src="./assets/img1.png" alt="Gừng Đen" class="absolute top-[45%] left-0 w-8/12 left-1/2 transform -translate-x-1/2">
+                        </div>
+                    </div>
+                    <div class="absolute -top-10 -right-10 bg-white p-4 rounded-2xl shadow-xl animate-bounce-slow">
+                        <div class="text-2xl">🔥</div>
+                        <div class="text-sm font-semibold text-gray-800">Hot Deal!</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i class="fas fa-chevron-down text-primary text-2xl"></i>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 fade-in-scroll">
+                    Gừng Đen Là Gì?
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto fade-in-scroll text-justify">
+                    Tinh hoa từ dược liệu quý – Chăm sóc sức khỏe toàn diện mỗi ngày <br />
+Gừng đen (Zingiber zerumbet) là một loại thảo dược quý hiếm, phần ruột có màu tím đậm đặc trưng, chứa nhiều hoạt chất sinh học có lợi như flavonoid, zerumbone… khác biệt hoàn toàn so với gừng trắng thông thường. Trong y học cổ truyền và hiện đại, gừng đen được ví như “nhân sâm bình dân” nhờ khả năng tăng cường sức đề kháng, hỗ trợ tiêu hóa, lưu thông khí huyết và giúp cơ thể khỏe mạnh từ bên trong.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="feature-card bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 fade-in-scroll">
+                    <div class="icon-wrapper bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-seedling text-3xl text-primary"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">100% Tự Nhiên</h3>
+                    <p class="text-gray-600">Sản phẩm từ gừng tươi nguyên chất, không chất bảo quản, an toàn cho sức khỏe</p>
+                </div>
+                <div class="feature-card bg-gradient-to-br from-yellow-50 to-orange-50 p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 fade-in-scroll" style="animation-delay: 0.1s">
+                    <div class="icon-wrapper bg-accent/10 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-flask text-3xl text-accent"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Chế Biến Chuẩn</h3>
+                    <p class="text-gray-600">Quy trình 9 lần hấp và phơi theo tiêu chuẩn y học cổ truyền</p>
+                </div>
+                <div class="feature-card bg-gradient-to-br from-pink-50 to-purple-50 p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 fade-in-scroll" style="animation-delay: 0.2s">
+                    <div class="icon-wrapper bg-secondary/10 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-certificate text-3xl text-secondary"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Chứng Nhận</h3>
+                    <p class="text-gray-600">Đạt chuẩn ATTP, ISO, được kiểm nghiệm bởi các cơ quan uy tín</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="py-20 bg-gradient-to-br from-purple-50 via-white to-pink-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-8">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 fade-in-scroll">
+                    Tại Sao?
+                </h2>
+                <p class="text-2xl md:text-3xl italic text-primary mb-6 fade-in-scroll">
+                    Tinh Chất Gừng Đen Lại Tốt Cho Bạn Đến Như Vậy
+                </p>
+                <div class="max-w-5xl mx-auto text-left mb-8 fade-in-scroll">
+                    <p class="text-lg text-gray-700 mb-4 leading-relaxed">
+                        Tinh chất gừng đen không chỉ là một loại thảo dược dân gian quý hiếm – mà còn là <strong>"người bạn đồng hành"</strong> cho sức khỏe toàn diện của người hiện đại. Với thành phần chứa hàm lượng cao các hoạt chất như <strong>zerumbone, flavonoid, polyphenol, gingerol…</strong>, gừng đen có tác dụng mạnh mẽ trong việc <strong>phòng ngừa – bảo vệ – phục hồi</strong> sức khỏe từ gốc.
+                    </p>
+                    <p class="text-lg text-gray-700 mb-4 leading-relaxed">
+                        <strong>GỪNG ĐEN</strong> có nhiều chi (tức là nhiều loại), còn gừng đen của tập đoàn VOLTEN là loại <strong>Kaempferia parviflora</strong> (thổ nhưỡng tốt nhất là ở Thái Lan). Từ nhiều kết quả nghiên cứu, loài <strong>Kaempferia parviflora</strong> này là cây dược liệu quý hiếm với các hoạt tính đáng chú ý như:
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Research Benefits Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                <div class="bg-white p-5 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 fade-in-scroll border-l-4 border-primary">
+                    <div class="flex items-start space-x-3">
+                        <i class="fas fa-check-circle text-primary text-xl mt-1"></i>
+                        <div>
+                            <p class="text-gray-800"><strong>Kháng khuẩn và kháng nấm</strong> theo tạp chí <em>Fitoterapia</em></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-5 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 fade-in-scroll border-l-4 border-secondary" style="animation-delay: 0.1s">
+                    <div class="flex items-start space-x-3">
+                        <i class="fas fa-check-circle text-secondary text-xl mt-1"></i>
+                        <div>
+                            <p class="text-gray-800"><strong>Chống lại tế bào ung thư biểu mô KB</strong> theo tạp chí <em>Archives of Pharmacal Research</em></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-5 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 fade-in-scroll border-l-4 border-accent" style="animation-delay: 0.2s">
+                    <div class="flex items-start space-x-3">
+                        <i class="fas fa-check-circle text-accent text-xl mt-1"></i>
+                        <div>
+                            <p class="text-gray-800"><strong>Chống loét dạ dày</strong> theo tạp chí <em>Journal of Ethnopharmacology</em></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-5 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 fade-in-scroll border-l-4 border-primary" style="animation-delay: 0.3s">
+                    <div class="flex items-start space-x-3">
+                        <i class="fas fa-check-circle text-primary text-xl mt-1"></i>
+                        <div>
+                            <p class="text-gray-800"><strong>Chống béo phì</strong> theo tạp chí <em>Journal of Natural Medicines</em></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-5 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 fade-in-scroll border-l-4 border-secondary" style="animation-delay: 0.4s">
+                    <div class="flex items-start space-x-3">
+                        <i class="fas fa-check-circle text-secondary text-xl mt-1"></i>
+                        <div>
+                            <p class="text-gray-800"><strong>Chống lại tế bào ung thư phổi NCIH187</strong> một cách mạnh mẽ theo tạp chí <em>Bioorganic & Medicinal Chemistry Letters</em></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-5 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 fade-in-scroll border-l-4 border-accent" style="animation-delay: 0.5s">
+                    <div class="flex items-start space-x-3">
+                        <i class="fas fa-check-circle text-accent text-xl mt-1"></i>
+                        <div>
+                            <p class="text-gray-800"><strong>Ngăn ngừa bệnh Alzheimer</strong> theo tạp chí <em>Journal of Functional Foods</em></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-5 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 fade-in-scroll border-l-4 border-primary" style="animation-delay: 0.6s">
+                    <div class="flex items-start space-x-3">
+                        <i class="fas fa-check-circle text-primary text-xl mt-1"></i>
+                        <div>
+                            <p class="text-gray-800"><strong>Hoạt tính bảo vệ gan</strong> theo tạp chí <em>Chemical and Pharmaceutical Bulletin</em></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-5 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 fade-in-scroll border-l-4 border-secondary" style="animation-delay: 0.7s">
+                    <div class="flex items-start space-x-3">
+                        <i class="fas fa-check-circle text-secondary text-xl mt-1"></i>
+                        <div>
+                            <p class="text-gray-800"><strong>Chống loãng xương và chống oxy hóa</strong> theo <em>Natural Product Sciences</em></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 fade-in-scroll">
+                    Sản Phẩm Nổi Bật
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto fade-in-scroll">
+                    Khám phá bộ sưu tập sản phẩm từ gừng đen và thảo dược thiên nhiên
+                </p>
+            </div>
+            <div class="products-carousel relative">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    
+                    <!-- Product 1: CÀ PHÊ ARABICA BRAZIL VCAFE -->
+                    <div class="product-card bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 fade-in-scroll">
+                        <div class="relative overflow-hidden group h-56 bg-gray-50 flex items-center justify-center">
+                            <img src="./assets/product1.jpg" alt="Cà Phê Arabica Brazil VCafe" class="max-h-full max-w-full object-contain transform group-hover:scale-110 transition-transform duration-500" onerror="this.src='https://via.placeholder.com/300x300/8B4789/FFFFFF?text=Coffee'">
+                            <div class="absolute top-4 right-4 bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                Hot
+                            </div>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="text-lg font-bold text-gray-900 mb-2 min-h-[56px] line-clamp-2">CÀ PHÊ ARABICA BRAZIL VCAFE</h3>
+                            <div class="flex items-center mb-2">
+                                <div class="text-yellow-400 text-sm">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="text-gray-500 ml-2 text-xs">(5.0)</span>
+                            </div>
+                            <p class="text-gray-600 text-sm mb-3 line-clamp-2">Cà phê Arabica nguyên chất từ Brazil</p>
+                            <div class="mb-3">
+                                <span class="text-2xl font-bold text-primary">625.000đ</span>
+                            </div>
+                            <button onclick="openProductDialog(1)" class="w-full bg-primary text-white py-2.5 rounded-full font-semibold hover:bg-primary/90 transition-colors duration-300 text-sm">
+                                <i class="fas fa-info-circle mr-2"></i>Xem thêm
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Product 2: TRÀ SỮA GỪNG ĐEN VCAFE -->
+                    <div class="product-card bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 fade-in-scroll" style="animation-delay: 0.1s">
+                        <div class="relative overflow-hidden group h-56 bg-gray-50 flex items-center justify-center">
+                            <img src="./assets/product2.png" alt="Trà Sữa Gừng Đen VCafe" class="max-h-full max-w-full object-contain transform group-hover:scale-110 transition-transform duration-500" onerror="this.src='https://via.placeholder.com/300x300/E91E63/FFFFFF?text=Milk+Tea'">
+                            <div class="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                -15%
+                            </div>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="text-lg font-bold text-gray-900 mb-2 min-h-[56px] line-clamp-2">TRÀ SỮA GỪNG ĐEN VCAFE</h3>
+                            <div class="flex items-center mb-2">
+                                <div class="text-yellow-400 text-sm">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="text-gray-500 ml-2 text-xs">(5.0)</span>
+                            </div>
+                            <p class="text-gray-600 text-sm mb-3 line-clamp-2">Trà sữa hòa quyện hương vị gừng đen</p>
+                            <div class="mb-3">
+                                <span class="text-2xl font-bold text-primary">1.275.000đ</span>
+                                <span class="text-gray-400 line-through ml-2 text-sm">1.500.000đ</span>
+                            </div>
+                            <button onclick="openProductDialog(2)" class="w-full bg-primary text-white py-2.5 rounded-full font-semibold hover:bg-primary/90 transition-colors duration-300 text-sm">
+                                <i class="fas fa-info-circle mr-2"></i>Xem thêm
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Product 3: VEMAXX -->
+                    <div class="product-card bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 fade-in-scroll" style="animation-delay: 0.2s">
+                        <div class="relative overflow-hidden group h-56 bg-gray-50 flex items-center justify-center">
+                            <img src="./assets/product3.png" alt="Vemaxx" class="max-h-full max-w-full object-contain transform group-hover:scale-110 transition-transform duration-500" onerror="this.src='https://via.placeholder.com/300x300/FFB300/FFFFFF?text=Vemaxx'">
+                            <div class="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                Mới
+                            </div>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="text-lg font-bold text-gray-900 mb-2 min-h-[56px] line-clamp-2">VEMAXX</h3>
+                            <div class="flex items-center mb-2">
+                                <div class="text-yellow-400 text-sm">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="text-gray-500 ml-2 text-xs">(5.0)</span>
+                            </div>
+                            <p class="text-gray-600 text-sm mb-3 line-clamp-2">Sản phẩm bổ sung dinh dưỡng toàn diện</p>
+                            <div class="mb-3">
+                                <span class="text-2xl font-bold text-primary">900.000đ</span>
+                            </div>
+                            <button onclick="openProductDialog(3)" class="w-full bg-primary text-white py-2.5 rounded-full font-semibold hover:bg-primary/90 transition-colors duration-300 text-sm">
+                                <i class="fas fa-info-circle mr-2"></i>Xem thêm
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Product 4: VTAMEEN -->
+                    <div class="product-card bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 fade-in-scroll" style="animation-delay: 0.3s">
+                        <div class="relative overflow-hidden group h-56 bg-gray-50 flex items-center justify-center">
+                            <img src="./assets/product4.png" alt="Vtameen" class="max-h-full max-w-full object-contain transform group-hover:scale-110 transition-transform duration-500" onerror="this.src='https://via.placeholder.com/300x300/8B4789/FFFFFF?text=Vtameen'">
+                            <div class="absolute top-4 right-4 bg-yellow-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                VIP
+                            </div>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="text-lg font-bold text-gray-900 mb-2 min-h-[56px] line-clamp-2">VTAMEEN</h3>
+                            <div class="flex items-center mb-2">
+                                <div class="text-yellow-400 text-sm">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="text-gray-500 ml-2 text-xs">(5.0)</span>
+                            </div>
+                            <p class="text-gray-600 text-sm mb-3 line-clamp-2">Sữa bò giàu canxi cùng chiết xuất gừng đen</p>
+                            <div class="mb-3">
+                                <span class="text-2xl font-bold text-primary">950.000đ</span>
+                            </div>
+                            <button onclick="openProductDialog(4)" class="w-full bg-primary text-white py-2.5 rounded-full font-semibold hover:bg-primary/90 transition-colors duration-300 text-sm">
+                                <i class="fas fa-info-circle mr-2"></i>Xem thêm
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Product 5: VPRO10 -->
+                    <div class="product-card bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 fade-in-scroll" style="animation-delay: 0.4s">
+                        <div class="relative overflow-hidden group h-56 bg-gray-50 flex items-center justify-center">
+                            <img src="./assets/product5.webp" alt="VPro10" class="max-h-full max-w-full object-contain transform group-hover:scale-110 transition-transform duration-500" onerror="this.src='https://via.placeholder.com/300x300/E91E63/FFFFFF?text=VPro10'">
+                            <div class="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                -20%
+                            </div>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="text-lg font-bold text-gray-900 mb-2 min-h-[56px] line-clamp-2">VPRO10</h3>
+                            <div class="flex items-center mb-2">
+                                <div class="text-yellow-400 text-sm">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="text-gray-500 ml-2 text-xs">(5.0)</span>
+                            </div>
+                            <p class="text-gray-600 text-sm mb-3 line-clamp-2">Bổ sung protein và dưỡng chất</p>
+                            <div class="mb-3">
+                                <span class="text-2xl font-bold text-primary">800.000đ</span>
+                                <span class="text-gray-400 line-through ml-2 text-sm">1.000.000đ</span>
+                            </div>
+                            <button onclick="openProductDialog(5)" class="w-full bg-primary text-white py-2.5 rounded-full font-semibold hover:bg-primary/90 transition-colors duration-300 text-sm">
+                                <i class="fas fa-info-circle mr-2"></i>Xem thêm
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Product 6: VR5 CHẤT LỎNG -->
+                    <div class="product-card bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 fade-in-scroll" style="animation-delay: 0.5s">
+                        <div class="relative overflow-hidden group h-56 bg-gray-50 flex items-center justify-center">
+                            <img src="./assets/product6.png" alt="VR5 Chất Lỏng" class="max-h-full max-w-full object-contain transform group-hover:scale-110 transition-transform duration-500" onerror="this.src='https://via.placeholder.com/300x300/FFB300/FFFFFF?text=VR5'">
+                            <div class="absolute top-4 right-4 bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                Hot
+                            </div>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="text-lg font-bold text-gray-900 mb-2 min-h-[56px] line-clamp-2">VR5 CHẤT LỎNG</h3>
+                            <div class="flex items-center mb-2">
+                                <div class="text-yellow-400 text-sm">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="text-gray-500 ml-2 text-xs">(5.0)</span>
+                            </div>
+                            <p class="text-gray-600 text-sm mb-3 line-clamp-2">Dung dịch bổ sung năng lượng nhanh</p>
+                            <div class="mb-3">
+                                <span class="text-2xl font-bold text-primary">1.000.000đ</span>
+                            </div>
+                            <button onclick="openProductDialog(6)" class="w-full bg-primary text-white py-2.5 rounded-full font-semibold hover:bg-primary/90 transition-colors duration-300 text-sm">
+                                <i class="fas fa-info-circle mr-2"></i>Xem thêm
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Product 7: V20 -->
+                    <div class="product-card bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 fade-in-scroll" style="animation-delay: 0.6s">
+                        <div class="relative overflow-hidden group h-56 bg-gray-50 flex items-center justify-center">
+                            <img src="./assets/product7.png" alt="V20" class="max-h-full max-w-full object-contain transform group-hover:scale-110 transition-transform duration-500" onerror="this.src='https://via.placeholder.com/300x300/8B4789/FFFFFF?text=V20'">
+                            <div class="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                                -10%
+                            </div>
+                        </div>
+                        <div class="p-5">
+                            <h3 class="text-lg font-bold text-gray-900 mb-2 min-h-[56px] line-clamp-2">V20</h3>
+                            <div class="flex items-center mb-2">
+                                <div class="text-yellow-400 text-sm">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="text-gray-500 ml-2 text-xs">(5.0)</span>
+                            </div>
+                            <p class="text-gray-600 text-sm mb-3 line-clamp-2">Viên uống hỗ trợ sức khỏe tổng thể</p>
+                            <div class="mb-3">
+                                <span class="text-2xl font-bold text-primary">900.000đ</span>
+                                <span class="text-gray-400 line-through ml-2 text-sm">1.000.000đ</span>
+                            </div>
+                            <button onclick="openProductDialog(7)" class="w-full bg-primary text-white py-2.5 rounded-full font-semibold hover:bg-primary/90 transition-colors duration-300 text-sm">
+                                <i class="fas fa-info-circle mr-2"></i>Xem thêm
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Dialog Modal -->
+    <div id="product-dialog" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-6xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="sticky top-0 bg-white border-b border-gray-200 p-6 flex justify-between items-center rounded-t-3xl z-10">
+                <h2 class="text-2xl font-bold text-gray-900">Chi Tiết Sản Phẩm</h2>
+                <button onclick="closeProductDialog()" class="text-gray-500 hover:text-gray-700 transition-colors">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+            <div id="dialog-content" class="p-8">
+                <!-- Content will be inserted by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Who Should Use Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-primary mb-4 fade-in-scroll">
+                    Ai Nên Sử Dụng?
+                </h2>
+                <p class="text-2xl md:text-3xl italic text-gray-700 fade-in-scroll">
+                    Sản Phẩm Tinh Chất Gừng Đen
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                <!-- Người lớn tuổi -->
+                <div class="target-group-card bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 fade-in-scroll">
+                    <div class="flex flex-col items-center text-center mb-6">
+                        <div class="w-24 h-24 rounded-full bg-white shadow-lg flex items-center justify-center mb-4 border-4 border-primary">
+                            <i class="fas fa-user-friends text-4xl text-primary"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-primary mb-3">NGƯỜI LỚN TUỔI SỨC KHỎE YẾU</h3>
+                    </div>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-start space-x-2">
+                            <i class="fas fa-circle text-primary text-xs mt-1"></i>
+                            <span class="text-gray-700">Cơ thể thường xuyên thiếu năng lượng, uể oải, dễ bị cảm lạnh</span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <i class="fas fa-circle text-primary text-xs mt-1"></i>
+                            <span class="text-gray-700">Hệ miễn dịch yếu → dễ mắc bệnh vặt khi thời tiết thay đổi</span>
+                        </li>
+                    </ul>
+                    <div class="bg-white p-4 rounded-xl shadow-inner">
+                        <div class="flex items-start space-x-2">
+                            <i class="fas fa-thumbs-up text-primary text-xl mt-1"></i>
+                            <p class="text-gray-800 font-semibold">Tăng đề kháng, bổ sung năng lượng, giữ ấm cơ thể tự nhiên</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Nhân viên văn phòng -->
+                <div class="target-group-card bg-gradient-to-br from-blue-50 to-cyan-50 p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 fade-in-scroll" style="animation-delay: 0.1s">
+                    <div class="flex flex-col items-center text-center mb-6">
+                        <div class="w-24 h-24 rounded-full bg-white shadow-lg flex items-center justify-center mb-4 border-4 border-blue-500">
+                            <i class="fas fa-laptop text-4xl text-blue-500"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-blue-600 mb-3">NHÂN VIÊN VĂN PHÒNG</h3>
+                    </div>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-start space-x-2">
+                            <i class="fas fa-circle text-blue-500 text-xs mt-1"></i>
+                            <span class="text-gray-700">Ngồi lâu, thiếu vận động gây ứ trệ khí huyết, đau vai gáy, đầy hơi, khó tiêu</span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <i class="fas fa-circle text-blue-500 text-xs mt-1"></i>
+                            <span class="text-gray-700">Áp lực công việc khiến cơ thể mệt mỏi, mất ngủ, suy giảm sức đề kháng</span>
+                        </li>
+                    </ul>
+                    <div class="bg-white p-4 rounded-xl shadow-inner">
+                        <div class="flex items-start space-x-2">
+                            <i class="fas fa-thumbs-up text-blue-500 text-xl mt-1"></i>
+                            <p class="text-gray-800 font-semibold">Cải thiện tiêu hóa, lưu thông khí huyết, tinh thần minh mẫn hơn</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trẻ em -->
+                <div class="target-group-card bg-gradient-to-br from-yellow-50 to-orange-50 p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 fade-in-scroll" style="animation-delay: 0.2s">
+                    <div class="flex flex-col items-center text-center mb-6">
+                        <div class="w-24 h-24 rounded-full bg-white shadow-lg flex items-center justify-center mb-4 border-4 border-orange-500">
+                            <i class="fas fa-child text-4xl text-orange-500"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-orange-600 mb-3">TRẺ EM CÓ SỨC ĐỀ KHÁNG KÉM</h3>
+                    </div>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-start space-x-2">
+                            <i class="fas fa-circle text-orange-500 text-xs mt-1"></i>
+                            <span class="text-gray-700">Hay hắt hơi, xổ mũi giao mùa</span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <i class="fas fa-circle text-orange-500 text-xs mt-1"></i>
+                            <span class="text-gray-700">Ho, viêm họng, cảm lạnh</span>
+                        </li>
+                    </ul>
+                    <div class="bg-white p-4 rounded-xl shadow-inner">
+                        <div class="flex items-start space-x-2">
+                            <i class="fas fa-thumbs-up text-orange-500 text-xl mt-1"></i>
+                            <p class="text-gray-800 font-semibold">Tăng cường hệ miễn dịch, xây dựng hàng rào phòng vệ vững chắc</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Người tập thể thao -->
+                <div class="target-group-card bg-gradient-to-br from-green-50 to-teal-50 p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 fade-in-scroll" style="animation-delay: 0.3s">
+                    <div class="flex flex-col items-center text-center mb-6">
+                        <div class="w-24 h-24 rounded-full bg-white shadow-lg flex items-center justify-center mb-4 border-4 border-green-500">
+                            <i class="fas fa-running text-4xl text-green-500"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-green-600 mb-3">NGƯỜI TẬP THỂ THAO</h3>
+                    </div>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-start space-x-2">
+                            <i class="fas fa-circle text-green-500 text-xs mt-1"></i>
+                            <span class="text-gray-700">Cần nguồn năng lượng tự nhiên giúp duy trì thể lực bền bỉ</span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <i class="fas fa-circle text-green-500 text-xs mt-1"></i>
+                            <span class="text-gray-700">Cơ thể cần phục hồi nhanh sau luyện tập, tránh mỏi mệt kéo dài</span>
+                        </li>
+                    </ul>
+                    <div class="bg-white p-4 rounded-xl shadow-inner">
+                        <div class="flex items-start space-x-2">
+                            <i class="fas fa-thumbs-up text-green-500 text-xl mt-1"></i>
+                            <p class="text-gray-800 font-semibold">Tăng trao đổi chất, hỗ trợ lưu thông máu và rút ngắn thời gian hồi phục</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rối loạn tiêu hóa -->
+                <div class="target-group-card bg-gradient-to-br from-pink-50 to-rose-50 p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 fade-in-scroll" style="animation-delay: 0.4s">
+                    <div class="flex flex-col items-center text-center mb-6">
+                        <div class="w-24 h-24 rounded-full bg-white shadow-lg flex items-center justify-center mb-4 border-4 border-pink-500">
+                            <i class="fas fa-heartbeat text-4xl text-pink-500"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-pink-600 mb-3">RỐI LOẠN TIÊU HÓA, BỊ LẠNH TAY CHÂN</h3>
+                    </div>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-start space-x-2">
+                            <i class="fas fa-circle text-pink-500 text-xs mt-1"></i>
+                            <span class="text-gray-700">Tay chân lạnh dù thời tiết không quá lạnh → tuần hoàn máu kém</span>
+                        </li>
+                        <li class="flex items-start space-x-2">
+                            <i class="fas fa-circle text-pink-500 text-xs mt-1"></i>
+                            <span class="text-gray-700">Ăn uống khó tiêu, hay đầy bụng, đau âm ỉ</span>
+                        </li>
+                    </ul>
+                    <div class="bg-white p-4 rounded-xl shadow-inner">
+                        <div class="flex items-start space-x-2">
+                            <i class="fas fa-thumbs-up text-pink-500 text-xl mt-1"></i>
+                            <p class="text-gray-800 font-semibold">Có tính ấm mạnh, giúp làm ấm cơ thể, hỗ trợ tiêu hóa khỏe mạnh</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Image Placeholder -->
+                <div class="target-group-card bg-gradient-to-t from-primary/20 to-transparent p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 fade-in-scroll" style="animation-delay: 0.4s">
+                    <div class="relative h-full w-full content-center">
+                        <img src="./assets/products-collection.png" alt="Sản phẩm Gừng Đen">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#contact" class="inline-block px-12 py-5 bg-primary text-white text-xl font-bold rounded-full hover:bg-primary/90 transform hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-3xl">
+                    <i class="fas fa-comment-dots mr-3"></i>TƯ VẤN NGAY
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-gradient-to-br from-purple-50 via-pink-50 to-yellow-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 fade-in-scroll">
+                    Khách Hàng Nói Gì?
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto fade-in-scroll">
+                    Hơn 100,000 khách hàng tin tưởng và hài lòng
+                </p>
+            </div>
+            
+            <!-- Testimonials Slider -->
+            <div class="relative max-w-7xl mx-auto">
+                <div class="testimonials-slider overflow-hidden px-4">
+                    <div class="testimonials-track flex transition-transform duration-500 ease-in-out items-stretch">
+                        
+                        <!-- Testimonial 1 -->
+                        <div class="testimonial-slide flex-shrink-0 w-full md:w-[400px] px-3">
+                            <div class="testimonial-card bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 h-full">
+                                <div class="flex items-center mb-6">
+                                    <img src="./assets/customer1.jpg" alt="Customer" class="w-16 h-16 rounded-full object-cover border-4 border-primary/20" onerror="this.src='https://via.placeholder.com/64x64/8B4789/FFFFFF?text=MA'">
+                                    <div class="ml-4">
+                                        <h4 class="font-bold text-gray-900 text-lg">Chị Minh Anh</h4>
+                                        <p class="text-sm text-gray-500">TP. Hồ Chí Minh</p>
+                                        <div class="text-yellow-400 text-sm mt-1">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600 italic leading-relaxed">
+                                    "Sản phẩm rất tuyệt vời! Tôi đã sử dụng được 2 tháng và cảm thấy sức khỏe cải thiện rõ rệt. Rất đáng để thử!"
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 2 -->
+                        <div class="testimonial-slide flex-shrink-0 w-full md:w-[400px] px-3">
+                            <div class="testimonial-card bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 h-full">
+                                <div class="flex items-center mb-6">
+                                    <img src="./assets/customer2.jpg" alt="Customer" class="w-16 h-16 rounded-full object-cover border-4 border-primary/20" onerror="this.src='https://via.placeholder.com/64x64/E91E63/FFFFFF?text=VN'">
+                                    <div class="ml-4">
+                                        <h4 class="font-bold text-gray-900 text-lg">Anh Văn Nam</h4>
+                                        <p class="text-sm text-gray-500">Hà Nội</p>
+                                        <div class="text-yellow-400 text-sm mt-1">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600 italic leading-relaxed">
+                                    "Chất lượng sản phẩm vượt ngoài mong đợi. Đóng gói đẹp, giao hàng nhanh. Cả nhà tôi đều đang dùng!"
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 3 -->
+                        <div class="testimonial-slide flex-shrink-0 w-full md:w-[400px] px-3">
+                            <div class="testimonial-card bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 h-full">
+                                <div class="flex items-center mb-6">
+                                    <img src="./assets/customer3.webp" alt="Customer" class="w-16 h-16 rounded-full object-cover border-4 border-primary/20" onerror="this.src='https://via.placeholder.com/64x64/FFB300/FFFFFF?text=TH'">
+                                    <div class="ml-4">
+                                        <h4 class="font-bold text-gray-900 text-lg">Chị Thu Hà</h4>
+                                        <p class="text-sm text-gray-500">Đà Nẵng</p>
+                                        <div class="text-yellow-400 text-sm mt-1">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600 italic leading-relaxed">
+                                    "Giá cả hợp lý, hiệu quả tốt. Tôi đã giới thiệu cho nhiều người bạn và họ đều rất hài lòng!"
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 4 -->
+                        <div class="testimonial-slide flex-shrink-0 w-full md:w-[400px] px-3">
+                            <div class="testimonial-card bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 h-full">
+                                <div class="flex items-center mb-6">
+                                    <img src="./assets/customer4.webp" alt="Customer" class="w-16 h-16 rounded-full object-cover border-4 border-primary/20" onerror="this.src='https://via.placeholder.com/64x64/8B4789/FFFFFF?text=HL'">
+                                    <div class="ml-4">
+                                        <h4 class="font-bold text-gray-900 text-lg">Anh Hoàng Long</h4>
+                                        <p class="text-sm text-gray-500">Cần Thơ</p>
+                                        <div class="text-yellow-400 text-sm mt-1">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600 italic leading-relaxed">
+                                    "Tôi bị đau khớp mãn tính, sau khi dùng gừng đen Volten 1 tháng thì cảm thấy đỡ đau nhiều. Sẽ tiếp tục sử dụng!"
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 5 -->
+                        <div class="testimonial-slide flex-shrink-0 w-full md:w-[400px] px-3">
+                            <div class="testimonial-card bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 h-full">
+                                <div class="flex items-center mb-6">
+                                    <img src="./assets/customer5.webp" alt="Customer" class="w-16 h-16 rounded-full object-cover border-4 border-primary/20" onerror="this.src='https://via.placeholder.com/64x64/E91E63/FFFFFF?text=LP'">
+                                    <div class="ml-4">
+                                        <h4 class="font-bold text-gray-900 text-lg">Chị Lan Phương</h4>
+                                        <p class="text-sm text-gray-500">Hải Phòng</p>
+                                        <div class="text-yellow-400 text-sm mt-1">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600 italic leading-relaxed">
+                                    "Con tôi hay ốm vặt, nhưng từ khi uống Vtameen thì sức đề kháng tốt hơn hẳn. Cảm ơn Volten rất nhiều!"
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 6 -->
+                        <div class="testimonial-slide flex-shrink-0 w-full md:w-[400px] px-3">
+                            <div class="testimonial-card bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 h-full">
+                                <div class="flex items-center mb-6">
+                                    <img src="./assets/customer6.jpg" alt="Customer" class="w-16 h-16 rounded-full object-cover border-4 border-primary/20" onerror="this.src='https://via.placeholder.com/64x64/FFB300/FFFFFF?text=QA'">
+                                    <div class="ml-4">
+                                        <h4 class="font-bold text-gray-900 text-lg">Anh Quốc Anh</h4>
+                                        <p class="text-sm text-gray-500">Nha Trang</p>
+                                        <div class="text-yellow-400 text-sm mt-1">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="text-gray-600 italic leading-relaxed">
+                                    "Làm việc văn phòng hay mệt mỏi, uống trà sữa gừng đen mỗi sáng thấy tỉnh táo và khỏe khoắn hơn nhiều!"
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Slider Controls -->
+                <button onclick="prevTestimonial()" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white text-primary w-12 h-12 rounded-full shadow-xl hover:bg-primary hover:text-white transition-all duration-300 z-10">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button onclick="nextTestimonial()" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-white text-primary w-12 h-12 rounded-full shadow-xl hover:bg-primary hover:text-white transition-all duration-300 z-10">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+
+                <!-- Slider Dots -->
+                <div class="flex justify-center mt-8 space-x-2" id="testimonial-dots">
+                    <!-- Dots will be generated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="fade-in-scroll">
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                        Đặt Hàng Ngay Hôm Nay
+                    </h2>
+                    <p class="text-xl text-gray-600 mb-8">
+                        Liên hệ với chúng tôi để được tư vấn và nhận ưu đãi đặc biệt
+                    </p>
+                    <div class="space-y-6">
+                        <div class="flex items-center space-x-4">
+                            <div class="bg-primary/10 w-12 h-12 rounded-full flex items-center justify-center">
+                                <i class="fas fa-phone text-primary text-xl"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-gray-900">Hotline</div>
+                                <a href="tel:0399999999" class="text-primary hover:underline">039.999.9999</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="bg-primary/10 w-12 h-12 rounded-full flex items-center justify-center">
+                                <i class="fas fa-envelope text-primary text-xl"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-gray-900">Email</div>
+                                <a href="mailto:info@volten.vn" class="text-primary hover:underline">info@volten.vn</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="bg-primary/10 w-12 h-12 rounded-full flex items-center justify-center">
+                                <i class="fas fa-map-marker-alt text-primary text-xl"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-gray-900">Địa chỉ</div>
+                                <p class="text-gray-600">Việt Nam</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-3xl shadow-xl fade-in-scroll">
+                    <form class="space-y-6" id="contact-form">
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Họ và tên</label>
+                            <input type="text" class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-primary focus:outline-none transition-colors duration-300" placeholder="Nhập họ tên của bạn">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Số điện thoại</label>
+                            <input type="tel" class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-primary focus:outline-none transition-colors duration-300" placeholder="Nhập số điện thoại">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Email</label>
+                            <input type="email" class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-primary focus:outline-none transition-colors duration-300" placeholder="Nhập email của bạn">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Lời nhắn</label>
+                            <textarea rows="4" class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-primary focus:outline-none transition-colors duration-300" placeholder="Để lại lời nhắn..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-primary text-white py-4 rounded-xl font-semibold hover:bg-primary/90 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
+                            <i class="fas fa-paper-plane mr-2"></i>Gửi Yêu Cầu
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">VOLTEN</h3>
+                    <p class="text-gray-400">Chăm sóc sức khỏe toàn diện với sản phẩm gừng đen chất lượng cao</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Sản Phẩm</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">Gừng đen thái lát</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Bột gừng đen</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Mật ong gừng đen</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Combo đặc biệt</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Thông Tin</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">Về chúng tôi</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Tin tức</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Chính sách</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Liên hệ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Theo Dõi Chúng Tôi</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors duration-300">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-primary transition-colors duration-300">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 VOLTEN. All rights reserved. Made with <span class="text-red-500">❤</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scroll-top" class="fixed bottom-8 right-8 bg-primary text-white w-12 h-12 rounded-full shadow-lg hover:bg-primary/90 transition-all duration-300 opacity-0 pointer-events-none z-50">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="products.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
