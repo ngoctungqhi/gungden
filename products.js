@@ -268,6 +268,95 @@ function closeProductDialog() {
     document.body.style.overflow = 'auto';
 }
 
+// Combos Data
+const combosData = [
+    {
+        id: 1,
+        name: "Combo Vui Lòng Điền Bên Dưới 1",
+        image: "./assets/combo1.jpg",
+        description: "Combo sản phẩm chăm sóc sức khỏe toàn diện",
+        price: "1.500.000đ",
+        originalPrice: "2.000.000đ",
+        discount: "-25%",
+        rating: 5,
+        detailImage: "./assets/combo_detail1.png",
+        details: {
+            title: "VUI LÒNG ĐIỀN BÊN DƯỚI",
+            ingredients: ["Sữa bò giàu canxi", "Chiết xuất gừng đen", "Hạt thi là đen", "Vitamin tổng hợp"],
+            description: "Bộ combo hoàn hảo kết hợp các sản phẩm bổ sung dinh dưỡng toàn diện",
+            benefits: ["Tăng cường miễn dịch", "Cải thiện tiêu hóa", "Lưu thông máu", "Giúp cơ thể ấm áp"]
+        }
+    },
+    {
+        id: 2,
+        name: "Combo Vui Lòng Điền Bên Dưới 2",
+        image: "./assets/combo2.jpg",
+        description: "Combo sản phẩm bổ sung dưỡng chất",
+        price: "1.800.000đ",
+        originalPrice: "2.400.000đ",
+        discount: "-25%",
+        rating: 5,
+        detailImage: "./assets/combo_detail2.png",
+        details: {
+            title: "VUI LÒNG ĐIỀN BÊN DƯỚI",
+            ingredients: ["Protein whey", "Vitamin nhóm B", "Khoáng chất", "Chiết xuất thảo dược"],
+            description: "Combo đặc biệt dành cho những người muốn bổ sung dưỡng chất toàn diện",
+            benefits: ["Tăng cơ bắp", "Bổ sung năng lượng", "Hỗ trợ phục hồi sau tập luyện", "Tăng sức đề kháng"]
+        }
+    },
+    {
+        id: 3,
+        name: "Combo Vui Lòng Điền Bên Dưới 3",
+        image: "./assets/combo3.jpg",
+        description: "Combo chăm sóc sức khỏe gia đình",
+        price: "2.000.000đ",
+        originalPrice: "2.800.000đ",
+        discount: "-29%",
+        rating: 5,
+        detailImage: "./assets/combo_detail3.png",
+        details: {
+            title: "VUI LÒNG ĐIỀN BÊN DƯỚI",
+            ingredients: ["Sữa tươi", "Gừng đen nguyên chất", "Thảo dược quý", "Vitamin D"],
+            description: "Combo toàn diện dành cho cả gia đình từ trẻ em đến người lớn",
+            benefits: ["Phù hợp cho mọi độ tuổi", "Tăng cường hệ miễn dịch", "Cải thiện sức khỏe tổng thể", "An toàn và hiệu quả"]
+        }
+    },
+    {
+        id: 4,
+        name: "Combo Vui Lòng Điền Bên Dưới 4",
+        image: "./assets/combo4.jpg",
+        description: "Combo chuyên sâu cho người trung tuổi",
+        price: "1.950.000đ",
+        originalPrice: "2.600.000đ",
+        discount: "-25%",
+        rating: 5,
+        detailImage: "./assets/combo_detail4.png",
+        details: {
+            title: "VUI LÒNG ĐIỀN BÊN DƯỚI",
+            ingredients: ["Gừng đen", "Hắc mạch", "Linh chi", "Thiên đông"],
+            description: "Combo đặc biệt hỗ trợ sức khỏe người trung tuổi và người lớn tuổi",
+            benefits: ["Bổ khí huyết", "Lưu thông tuần hoàn", "Tăng cường tiêu hóa", "Hỗ trợ giấc ngủ"]
+        }
+    },
+    {
+        id: 5,
+        name: "Combo Vui Lòng Điền Bên Dưới 5",
+        image: "./assets/combo5.jpg",
+        description: "Combo cao cấp VIP special edition",
+        price: "2.500.000đ",
+        originalPrice: "3.500.000đ",
+        discount: "-29%",
+        rating: 5,
+        detailImage: "./assets/combo_detail5.png",
+        details: {
+            title: "VUI LÒNG ĐIỀN BÊN DƯỚI",
+            ingredients: ["Gừng đen nguyên chất cao cấp", "Sâm Ngọc Linh", "Nấm Linh Chi Đỏ", "Yến sào"],
+            description: "Combo VIP cao cấp với những thành phần quý nhất, dành cho những ai muốn chăm sóc sức khỏe toàn diện nhất",
+            benefits: ["Bổ dưỡng cao cấp", "Làm đẹp da", "Tăng sức đề kháng mạnh", "Phục hồi sức khỏe nhanh chóng"]
+        }
+    }
+];
+
 // Close dialog when clicking outside
 document.addEventListener('DOMContentLoaded', function() {
     const dialog = document.getElementById('product-dialog');

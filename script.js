@@ -664,3 +664,114 @@ function handleSwipe() {
 // Initialize slider
 initTestimonialSlider();
 
+// Combo Dialog Functions
+function openComboDialog(comboId) {
+    const combo = combosData.find(c => c.id === comboId);
+    if (!combo) return;
+    
+    const dialogContent = document.getElementById('combo-dialog-content');
+    
+    let benefitsHtml = combo.details.benefits.map(benefit => 
+        `<div class="flex items-start space-x-3 mb-2">
+            <i class="fas fa-check-circle text-primary text-lg mt-1"></i>
+            <span class="text-gray-700">${benefit}</span>
+        </div>`
+    ).join('');
+    
+    let ingredientsHtml = combo.details.ingredients.map(ingredient => 
+        `<span class="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-2 mr-2">${ingredient}</span>`
+    ).join('');
+    
+    dialogContent.innerHTML = `
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Left side - Image -->
+            <div class="flex flex-col items-center">
+                <div class="w-full bg-gradient-to-br from-blue-100 to-purple-100 rounded-3xl p-8 flex items-center justify-center h-96">
+                    <img src="${combo.detailImage}" alt="${combo.name}" class="max-h-full max-w-full object-contain">
+                </div>
+                <div class="mt-6 text-center w-full">
+                    <div class="inline-block">
+                        <h3 class="text-3xl font-bold text-gray-900 mb-2">${combo.name}</h3>
+                        <div class="flex items-center justify-center gap-2 mb-4">
+                            <div class="text-yellow-400 text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="text-gray-600 text-sm">(5.0 - 1000+ Đánh giá)</span>
+                        </div>
+                        <div class="flex items-center justify-center gap-3">
+                            <span class="text-4xl font-bold text-primary">${combo.price}</span>
+                            <span class="text-xl text-gray-400 line-through">${combo.originalPrice}</span>
+                            <span class="bg-red-500 text-white px-3 py-1 rounded-full font-bold">${combo.discount}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right side - Details -->
+            <div>
+                <div class="mb-8">
+                    <h4 class="text-2xl font-bold text-primary mb-4">
+                        <i class="fas fa-info-circle mr-2"></i>${combo.details.title}
+                    </h4>
+                    <p class="text-gray-700 text-lg leading-relaxed mb-4">${combo.details.description}</p>
+                </div>
+                
+                <div class="mb-8">
+                    <h4 class="text-xl font-bold text-gray-900 mb-4">
+                        <i class="fas fa-heart text-red-500 mr-2"></i>Lợi Ích Chính
+                    </h4>
+                    <div class="bg-gradient-to-br from-primary/5 to-secondary/5 p-6 rounded-2xl">
+                        ${benefitsHtml}
+                    </div>
+                </div>
+                
+                <div class="mb-8">
+                    <h4 class="text-xl font-bold text-gray-900 mb-4">
+                        <i class="fas fa-flask mr-2"></i>Thành Phần
+                    </h4>
+                    <div class="flex flex-wrap">
+                        ${ingredientsHtml}
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-4">
+                    <button onclick="closeComboDialog()" class="px-6 py-3 border-2 border-primary text-primary font-bold rounded-full hover:bg-primary/10 transition-colors duration-300">
+                        <i class="fas fa-arrow-left mr-2"></i>Quay Lại
+                    </button>
+                    <button class="px-6 py-3 bg-primary text-white font-bold rounded-full hover:bg-primary/90 transition-colors duration-300">
+                        <i class="fas fa-shopping-cart mr-2"></i>Mua Ngay
+                    </button>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    const dialog = document.getElementById('combo-dialog');
+    dialog.classList.remove('hidden');
+    dialog.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeComboDialog() {
+    const dialog = document.getElementById('combo-dialog');
+    dialog.classList.add('hidden');
+    dialog.classList.remove('flex');
+    document.body.style.overflow = 'auto';
+}
+
+// Close combo dialog when clicking outside
+document.addEventListener('DOMContentLoaded', function() {
+    const comboDialog = document.getElementById('combo-dialog');
+    if (comboDialog) {
+        comboDialog.addEventListener('click', function(e) {
+            if (e.target === comboDialog) {
+                closeComboDialog();
+            }
+        });
+    }
+});
+

@@ -713,3 +713,71 @@ footer a:hover::after {
     background: #6d3569;
 }
 
+/* Certificates and Awards Section */
+.certificate-card {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.certificate-card.fade-in-scroll.visible {
+    opacity: 1;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#certificates .certificate-card:hover {
+    transform: translateY(-8px) scale(1.02);
+}
+
+#certificates .certificate-card img {
+    transition: transform 0.5s ease;
+}
+
+#certificates .certificate-card:hover img {
+    transform: scale(1.05);
+}
+
+/* Shadow styles for certificates */
+.shadow-3xl {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* Animation delays */
+.fade-in-scroll[style*="animation-delay: 0.2s"] {
+    animation-delay: 0.2s;
+}
+
+.fade-in-scroll[style*="animation-delay: 0.4s"] {
+    animation-delay: 0.4s;
+}
+
+.fade-in-scroll[style*="animation-delay: 0.6s"] {
+    animation-delay: 0.6s;
+}
+
+/* Trust indicators animation */
+#certificates .text-center {
+    transition: transform 0.3s ease;
+}
+
+#certificates .text-center:hover {
+    transform: translateY(-5px);
+}
+
+#certificates .text-center i {
+    transition: transform 0.3s ease;
+}
+
+#certificates .text-center:hover i {
+    transform: rotate(10deg) scale(1.1);
+}
+
