@@ -36,6 +36,7 @@
                     <a href="#about" class="nav-link text-gray-700 hover:text-primary transition-colors duration-300">Về sản phẩm</a>
                     <a href="#benefits" class="nav-link text-gray-700 hover:text-primary transition-colors duration-300">Lợi ích</a>
                     <a href="#products" class="nav-link text-gray-700 hover:text-primary transition-colors duration-300">Sản phẩm</a>
+                    <a href="#testimonials" class="nav-link text-gray-700 hover:text-primary transition-colors duration-300">Phản hồi</a>
                     <a href="#certificates" class="nav-link text-gray-700 hover:text-primary transition-colors duration-300">Chứng nhận</a>
                     <a href="#contact" class="nav-link text-gray-700 hover:text-primary transition-colors duration-300">Liên hệ</a>
                 </div>
@@ -51,6 +52,7 @@
                 <a href="#about" class="nav-link text-gray-700 hover:text-primary transition-colors duration-300">Về sản phẩm</a>
                 <a href="#benefits" class="nav-link text-gray-700 hover:text-primary transition-colors duration-300">Lợi ích</a>
                 <a href="#products" class="nav-link text-gray-700 hover:text-primary transition-colors duration-300">Sản phẩm</a>
+                <a href="#testimonials" class="nav-link text-gray-700 hover:text-primary transition-colors duration-300">Phản hồi</a>
                 <a href="#certificates" class="nav-link text-gray-700 hover:text-primary transition-colors duration-300">Chứng nhận</a>
                 <a href="#contact" class="nav-link text-gray-700 hover:text-primary transition-colors duration-300">Liên hệ</a>
             </div>
@@ -144,15 +146,67 @@
     <!-- About Section -->
     <section id="about" class="py-20 bg-white">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 fade-in-scroll">
-                    Gừng Đen Là Gì?
-                </h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto fade-in-scroll text-justify">
-                    Tinh hoa từ dược liệu quý – Chăm sóc sức khỏe toàn diện mỗi ngày <br />
-Gừng đen (Zingiber zerumbet) là một loại thảo dược quý hiếm, phần ruột có màu tím đậm đặc trưng, chứa nhiều hoạt chất sinh học có lợi như flavonoid, zerumbone… khác biệt hoàn toàn so với gừng trắng thông thường. Trong y học cổ truyền và hiện đại, gừng đen được ví như “nhân sâm bình dân” nhờ khả năng tăng cường sức đề kháng, hỗ trợ tiêu hóa, lưu thông khí huyết và giúp cơ thể khỏe mạnh từ bên trong.
-                </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-20 items-center mb-20">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 fade-in-scroll">
+                        Gừng Đen Là Gì?
+                    </h2>
+                    <p class="text-xl text-gray-600 max-w-3xl mx-auto fade-in-scroll text-justify">
+                        Tinh hoa từ dược liệu quý – Chăm sóc sức khỏe toàn diện mỗi ngày <br />
+    Gừng đen (Zingiber zerumbet) là một loại thảo dược quý hiếm, phần ruột có màu tím đậm đặc trưng, chứa nhiều hoạt chất sinh học có lợi như flavonoid, zerumbone… khác biệt hoàn toàn so với gừng trắng thông thường. Trong y học cổ truyền và hiện đại, gừng đen được ví như “nhân sâm bình dân” nhờ khả năng tăng cường sức đề kháng, hỗ trợ tiêu hóa, lưu thông khí huyết và giúp cơ thể khỏe mạnh từ bên trong.
+                    </p>
+                </div>
+
+                <!-- Image Gallery Section -->
+                <div class="relative w-full max-w-4xl mx-auto">
+                    <!-- Main Image Container -->
+                    <div class="flex items-center justify-center">
+                        <div class="relative w-96 h-96 flex items-center justify-center">
+                            <!-- Decorative circles behind main image -->
+                            <div class="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-full blur-3xl animate-pulse-glow"></div>
+                            <div class="absolute inset-0 bg-gradient-to-br from-accent/10 to-primary/10 rounded-full blur-2xl animate-float" style="animation-delay: 0.5s"></div>
+                            
+                            <!-- Main Image -->
+                            <div class="relative z-10 w-80 h-80 rounded-full overflow-hidden shadow-2xl border-8 border-white image-zoom-main">
+                                <img src="./assets/gungden.png" alt="Gừng Đen Chính" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Secondary Images Grid -->
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
+                        <!-- Image 1 -->
+                        <div class="flex justify-center">
+                            <div class="relative w-32 h-32 rounded-lg overflow-hidden shadow-lg border-4 border-primary/30 image-hover-lift" style="animation-delay: 0.1s">
+                                <img src="./assets/gungden1.png" alt="Gừng Đen 1" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                            </div>
+                        </div>
+
+                        <!-- Image 2 -->
+                        <div class="flex justify-center">
+                            <div class="relative w-32 h-32 rounded-lg overflow-hidden shadow-lg border-4 border-secondary/30 image-hover-lift" style="animation-delay: 0.2s">
+                                <img src="./assets/gungden2.png" alt="Gừng Đen 2" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                            </div>
+                        </div>
+
+                        <!-- Image 3 -->
+                        <div class="flex justify-center">
+                            <div class="relative w-32 h-32 rounded-lg overflow-hidden shadow-lg border-4 border-accent/30 image-hover-lift" style="animation-delay: 0.3s">
+                                <img src="./assets/gungden3.png" alt="Gừng Đen 3" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                            </div>
+                        </div>
+
+                        <!-- Image 4 -->
+                        <div class="flex justify-center">
+                            <div class="relative w-32 h-32 rounded-lg overflow-hidden shadow-lg border-4 border-primary/30 image-hover-lift" style="animation-delay: 0.4s">
+                                <img src="./assets/gungden4.jpg" alt="Gừng Đen 4" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+
+
             <div class="grid md:grid-cols-3 gap-8">
                 <div class="feature-card bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 fade-in-scroll">
                     <div class="icon-wrapper bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mb-6">
@@ -838,7 +892,7 @@ Gừng đen (Zingiber zerumbet) là một loại thảo dược quý hiếm, ph�
     </section>
 
     <!-- Testimonials Section -->
-    <section class="py-20 bg-gradient-to-br from-purple-50 via-pink-50 to-yellow-50">
+    <section id="testimonials" class="py-20 bg-gradient-to-br from-purple-50 via-pink-50 to-yellow-50">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
                 <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 fade-in-scroll">
@@ -1005,6 +1059,122 @@ Gừng đen (Zingiber zerumbet) là một loại thảo dược quý hiếm, ph�
 
                 <!-- Slider Dots -->
                 <div class="flex justify-center mt-8 space-x-2" id="testimonial-dots">
+                    <!-- Dots will be generated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Testimonials Section - Yoga Champions & Community -->
+    <section class="py-20 bg-gradient-to-br from-yellow-50 via-orange-50 to-pink-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 fade-in-scroll">
+                    Lễ Vinh Danh Kiện Tướng Yoga Đạt Thành Tích Toàn Quốc - Châu Á
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto fade-in-scroll">
+                    Gừng đen Volten đồng hành cùng các kiện tướng yoga đạt thành tích xuất sắc
+                </p>
+            </div>
+
+            <!-- Images Slider for Yoga Champions -->
+            <div class="relative max-w-5xl mx-auto">
+                <div class="yoga-slider overflow-hidden px-4 rounded-2xl">
+                    <div class="yoga-track flex transition-transform duration-500 ease-in-out">
+                        <!-- Slide 1 -->
+                        <div class="yoga-slide flex-shrink-0 w-full">
+                            <div class="relative w-full h-96 rounded-2xl overflow-hidden shadow-xl">
+                                <img src="./assets/levinhdanh1.png" alt="Lễ vinh danh yoga 1" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 2 -->
+                        <div class="yoga-slide flex-shrink-0 w-full">
+                            <div class="relative w-full h-96 rounded-2xl overflow-hidden shadow-xl">
+                                <img src="./assets/levinhdanh2.png" alt="Lễ vinh danh yoga 2" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 3 -->
+                        <div class="yoga-slide flex-shrink-0 w-full">
+                            <div class="relative w-full h-96 rounded-2xl overflow-hidden shadow-xl">
+                                <img src="./assets/levinhdanh3.png" alt="Lễ vinh danh yoga 3" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slider Controls -->
+                <button onclick="prevYogaSlide()" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white text-primary w-12 h-12 rounded-full shadow-xl hover:bg-primary hover:text-white transition-all duration-300 z-10">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button onclick="nextYogaSlide()" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-white text-primary w-12 h-12 rounded-full shadow-xl hover:bg-primary hover:text-white transition-all duration-300 z-10">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+
+                <!-- Slider Dots -->
+                <div class="flex justify-center mt-8 space-x-2" id="yoga-dots">
+                    <!-- Dots will be generated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section - Yoga Associations & Entrepreneurs -->
+    <section class="py-20 bg-gradient-to-br from-pink-50 via-purple-50 to-indigo-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 fade-in-scroll">
+                    Cafe Gừng Đen Đồng Hành Cùng Nhiều Liên Đoàn Yoga & Doanh Nhân
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto fade-in-scroll">
+                    Được các tổ chức yoga và cộng đồng doanh nhân tin tưởng và ủng hộ
+                </p>
+            </div>
+
+            <!-- Images Slider for Community -->
+            <div class="relative max-w-5xl mx-auto">
+                <div class="community-slider overflow-hidden px-4 rounded-2xl">
+                    <div class="community-track flex transition-transform duration-500 ease-in-out">
+                        <!-- Slide 1 -->
+                        <div class="community-slide flex-shrink-0 w-full">
+                            <div class="relative w-full h-96 rounded-2xl overflow-hidden shadow-xl">
+                                <img src="./assets/kol1.jpg" alt="Cộng đồng yoga doanh nhân 1" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 2 -->
+                        <div class="community-slide flex-shrink-0 w-full">
+                            <div class="relative w-full h-96 rounded-2xl overflow-hidden shadow-xl">
+                                <img src="./assets/kol2.jpg" alt="Cộng đồng yoga doanh nhân 2" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 3 -->
+                        <div class="community-slide flex-shrink-0 w-full">
+                            <div class="relative w-full h-96 rounded-2xl overflow-hidden shadow-xl">
+                                <img src="./assets/kol3.jpg" alt="Cộng đồng yoga doanh nhân 3" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slider Controls -->
+                <button onclick="prevCommunitySlide()" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white text-primary w-12 h-12 rounded-full shadow-xl hover:bg-primary hover:text-white transition-all duration-300 z-10">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button onclick="nextCommunitySlide()" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-white text-primary w-12 h-12 rounded-full shadow-xl hover:bg-primary hover:text-white transition-all duration-300 z-10">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+
+                <!-- Slider Dots -->
+                <div class="flex justify-center mt-8 space-x-2" id="community-dots">
                     <!-- Dots will be generated by JavaScript -->
                 </div>
             </div>

@@ -905,5 +905,113 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
+    // Initialize Yoga and Community Sliders
+    initYogaSlider();
+    initCommunitySlider();
 });
+
+// ===================================
+// Yoga Champions Slider
+// ===================================
+let currentYogaIndex = 0;
+const yogaTotalSlides = 3;
+
+function initYogaSlider() {
+    const dotsContainer = document.getElementById('yoga-dots');
+    if (!dotsContainer) return;
+    
+    dotsContainer.innerHTML = '';
+    for (let i = 0; i < yogaTotalSlides; i++) {
+        const dot = document.createElement('button');
+        dot.setAttribute('aria-label', `Slide ${i + 1}`);
+        dot.className = i === 0 ? 'w-3 h-3 rounded-full bg-primary transition-all duration-300' : 'w-2 h-2 rounded-full bg-gray-300 transition-all duration-300 hover:bg-gray-400';
+        dot.addEventListener('click', () => goToYogaSlide(i));
+        dotsContainer.appendChild(dot);
+    }
+}
+
+function goToYogaSlide(index) {
+    const track = document.querySelector('.yoga-track');
+    if (!track) return;
+    
+    currentYogaIndex = index % yogaTotalSlides;
+    const offset = -currentYogaIndex * 100;
+    track.style.transform = `translateX(${offset}%)`;
+    
+    updateYogaDots();
+}
+
+function prevYogaSlide() {
+    currentYogaIndex = (currentYogaIndex - 1 + yogaTotalSlides) % yogaTotalSlides;
+    goToYogaSlide(currentYogaIndex);
+}
+
+function nextYogaSlide() {
+    currentYogaIndex = (currentYogaIndex + 1) % yogaTotalSlides;
+    goToYogaSlide(currentYogaIndex);
+}
+
+function updateYogaDots() {
+    const dots = document.querySelectorAll('#yoga-dots button');
+    dots.forEach((dot, index) => {
+        if (index === currentYogaIndex) {
+            dot.className = 'w-3 h-3 rounded-full bg-primary transition-all duration-300';
+        } else {
+            dot.className = 'w-2 h-2 rounded-full bg-gray-300 transition-all duration-300 hover:bg-gray-400';
+        }
+    });
+}
+
+// ===================================
+// Community Slider
+// ===================================
+let currentCommunityIndex = 0;
+const communityTotalSlides = 3;
+
+function initCommunitySlider() {
+    const dotsContainer = document.getElementById('community-dots');
+    if (!dotsContainer) return;
+    
+    dotsContainer.innerHTML = '';
+    for (let i = 0; i < communityTotalSlides; i++) {
+        const dot = document.createElement('button');
+        dot.setAttribute('aria-label', `Slide ${i + 1}`);
+        dot.className = i === 0 ? 'w-3 h-3 rounded-full bg-primary transition-all duration-300' : 'w-2 h-2 rounded-full bg-gray-300 transition-all duration-300 hover:bg-gray-400';
+        dot.addEventListener('click', () => goToCommunitySlide(i));
+        dotsContainer.appendChild(dot);
+    }
+}
+
+function goToCommunitySlide(index) {
+    const track = document.querySelector('.community-track');
+    if (!track) return;
+    
+    currentCommunityIndex = index % communityTotalSlides;
+    const offset = -currentCommunityIndex * 100;
+    track.style.transform = `translateX(${offset}%)`;
+    
+    updateCommunityDots();
+}
+
+function prevCommunitySlide() {
+    currentCommunityIndex = (currentCommunityIndex - 1 + communityTotalSlides) % communityTotalSlides;
+    goToCommunitySlide(currentCommunityIndex);
+}
+
+function nextCommunitySlide() {
+    currentCommunityIndex = (currentCommunityIndex + 1) % communityTotalSlides;
+    goToCommunitySlide(currentCommunityIndex);
+}
+
+function updateCommunityDots() {
+    const dots = document.querySelectorAll('#community-dots button');
+    dots.forEach((dot, index) => {
+        if (index === currentCommunityIndex) {
+            dot.className = 'w-3 h-3 rounded-full bg-primary transition-all duration-300';
+        } else {
+            dot.className = 'w-2 h-2 rounded-full bg-gray-300 transition-all duration-300 hover:bg-gray-400';
+        }
+    });
+}
 
