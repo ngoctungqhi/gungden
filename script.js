@@ -665,6 +665,8 @@ function handleSwipe() {
 initTestimonialSlider();
 
 // Combo Dialog Functions
+let comboCountdownInterval = null;
+
 function openComboDialog(comboId) {
     const combo = combosData.find(c => c.id === comboId);
     if (!combo) return;
@@ -711,40 +713,79 @@ function openComboDialog(comboId) {
                 </div>
             </div>
             
-            <!-- Right side - Details -->
+            <!-- Right side - Form and Details -->
             <div>
-                <div class="mb-8">
+                <!-- Countdown Timer -->
+                <div class="mb-6 bg-gradient-to-r from-red-500 to-orange-500 rounded-2xl p-6 text-white text-center shadow-lg">
+                    <p class="text-sm font-semibold mb-3 uppercase tracking-wider">
+                        <i class="fas fa-clock mr-2"></i>Thời gian kết thúc chương trình
+                    </p>
+                    <div class="flex justify-center gap-3" id="combo-countdown">
+                        <div class="flex flex-col items-center bg-white/20 rounded-xl px-4 py-3 min-w-[70px]">
+                            <span class="text-3xl font-bold" id="countdown-days">00</span>
+                            <span class="text-xs mt-1">ngày</span>
+                        </div>
+                        <div class="flex flex-col items-center bg-white/20 rounded-xl px-4 py-3 min-w-[70px]">
+                            <span class="text-3xl font-bold" id="countdown-hours">00</span>
+                            <span class="text-xs mt-1">giờ</span>
+                        </div>
+                        <div class="flex flex-col items-center bg-white/20 rounded-xl px-4 py-3 min-w-[70px]">
+                            <span class="text-3xl font-bold" id="countdown-minutes">00</span>
+                            <span class="text-xs mt-1">phút</span>
+                        </div>
+                        <div class="flex flex-col items-center bg-white/20 rounded-xl px-4 py-3 min-w-[70px]">
+                            <span class="text-3xl font-bold" id="countdown-seconds">00</span>
+                            <span class="text-xs mt-1">giây</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Registration Form -->
+                <div class="mb-6">
                     <h4 class="text-2xl font-bold text-primary mb-4">
-                        <i class="fas fa-info-circle mr-2"></i>${combo.details.title}
+                        <i class="fas fa-gift mr-2"></i>VUI LÒNG ĐIỀN BÊN DƯỚI
                     </h4>
-                    <p class="text-gray-700 text-lg leading-relaxed mb-4">${combo.details.description}</p>
-                </div>
-                
-                <div class="mb-8">
-                    <h4 class="text-xl font-bold text-gray-900 mb-4">
-                        <i class="fas fa-heart text-red-500 mr-2"></i>Lợi Ích Chính
-                    </h4>
-                    <div class="bg-gradient-to-br from-primary/5 to-secondary/5 p-6 rounded-2xl">
-                        ${benefitsHtml}
-                    </div>
-                </div>
-                
-                <div class="mb-8">
-                    <h4 class="text-xl font-bold text-gray-900 mb-4">
-                        <i class="fas fa-flask mr-2"></i>Thành Phần
-                    </h4>
-                    <div class="flex flex-wrap">
-                        ${ingredientsHtml}
-                    </div>
-                </div>
-                
-                <div class="grid grid-cols-2 gap-4">
-                    <button onclick="closeComboDialog()" class="px-6 py-3 border-2 border-primary text-primary font-bold rounded-full hover:bg-primary/10 transition-colors duration-300">
-                        <i class="fas fa-arrow-left mr-2"></i>Quay Lại
-                    </button>
-                    <button class="px-6 py-3 bg-primary text-white font-bold rounded-full hover:bg-primary/90 transition-colors duration-300">
-                        <i class="fas fa-shopping-cart mr-2"></i>Mua Ngay
-                    </button>
+
+                    <form id="combo-registration-form" class="space-y-4">
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">
+                                <i class="fas fa-user mr-2 text-primary"></i>Họ và tên
+                            </label>
+                            <input type="text" 
+                                   name="fullname" 
+                                   required
+                                   class="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-primary focus:outline-none transition-colors duration-300"
+                                   placeholder="Nhập họ và tên của bạn">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">
+                                <i class="fas fa-phone mr-2 text-primary"></i>Số điện thoại
+                            </label>
+                            <input type="tel" 
+                                   name="phone" 
+                                   required
+                                   pattern="[0-9]{10,11}"
+                                   class="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-primary focus:outline-none transition-colors duration-300"
+                                   placeholder="Nhập số điện thoại của bạn">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">
+                                <i class="fas fa-map-marker-alt mr-2 text-primary"></i>Địa chỉ
+                            </label>
+                            <textarea name="address" 
+                                      required
+                                      rows="3"
+                                      class="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:border-primary focus:outline-none transition-colors duration-300 resize-none"
+                                      placeholder="Nhập địa chỉ của bạn"></textarea>
+                        </div>
+                        
+                        <button type="submit" 
+                                class="w-full bg-gradient-to-r from-primary to-secondary text-white py-4 rounded-xl font-bold text-lg hover:shadow-2xl transform hover:scale-[1.02] transition-all duration-300">
+                            <i class="fas fa-shopping-cart mr-2"></i>MUA NGAY
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -754,6 +795,78 @@ function openComboDialog(comboId) {
     dialog.classList.remove('hidden');
     dialog.classList.add('flex');
     document.body.style.overflow = 'hidden';
+    
+    // Start countdown
+    startComboCountdown();
+    
+    // Handle form submission
+    const form = document.getElementById('combo-registration-form');
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(form);
+            const data = {
+                fullname: formData.get('fullname'),
+                phone: formData.get('phone'),
+                address: formData.get('address'),
+                combo: combo.name,
+                price: combo.price
+            };
+            
+            // Here you can send data to your server
+            console.log('Form submitted:', data);
+            
+            // Show success message
+            alert('Cảm ơn bạn đã đăng ký! Chúng tôi sẽ liên hệ với bạn sớm nhất.');
+            
+            // Reset form
+            form.reset();
+        });
+    }
+}
+
+function startComboCountdown() {
+    // Clear any existing interval
+    if (comboCountdownInterval) {
+        clearInterval(comboCountdownInterval);
+    }
+    
+    // Set countdown duration (2 days from now)
+    const countdownDuration = 2 * 24 * 60 * 60 * 1000; // 2 days in milliseconds
+    let endTime = Date.now() + countdownDuration;
+    
+    function updateCountdown() {
+        const now = Date.now();
+        let timeLeft = endTime - now;
+        
+        // Reset if countdown reaches zero
+        if (timeLeft <= 0) {
+            // Reset countdown to 2 days again
+            endTime = Date.now() + countdownDuration;
+            timeLeft = endTime - now;
+        }
+        
+        const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+        
+        const daysEl = document.getElementById('countdown-days');
+        const hoursEl = document.getElementById('countdown-hours');
+        const minutesEl = document.getElementById('countdown-minutes');
+        const secondsEl = document.getElementById('countdown-seconds');
+        
+        if (daysEl) daysEl.textContent = String(days).padStart(2, '0');
+        if (hoursEl) hoursEl.textContent = String(hours).padStart(2, '0');
+        if (minutesEl) minutesEl.textContent = String(minutes).padStart(2, '0');
+        if (secondsEl) secondsEl.textContent = String(seconds).padStart(2, '0');
+    }
+    
+    // Update immediately
+    updateCountdown();
+    
+    // Update every second
+    comboCountdownInterval = setInterval(updateCountdown, 1000);
 }
 
 function closeComboDialog() {
@@ -761,6 +874,25 @@ function closeComboDialog() {
     dialog.classList.add('hidden');
     dialog.classList.remove('flex');
     document.body.style.overflow = 'auto';
+    
+    // Clear countdown interval
+    if (comboCountdownInterval) {
+        clearInterval(comboCountdownInterval);
+        comboCountdownInterval = null;
+    }
+}
+
+function closeComboDialog() {
+    const dialog = document.getElementById('combo-dialog');
+    dialog.classList.add('hidden');
+    dialog.classList.remove('flex');
+    document.body.style.overflow = 'auto';
+    
+    // Clear countdown interval
+    if (comboCountdownInterval) {
+        clearInterval(comboCountdownInterval);
+        comboCountdownInterval = null;
+    }
 }
 
 // Close combo dialog when clicking outside

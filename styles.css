@@ -781,3 +781,231 @@ footer a:hover::after {
     transform: rotate(10deg) scale(1.1);
 }
 
+/* Combo Dialog Form Styles */
+#combo-registration-form input,
+#combo-registration-form textarea {
+    transition: all 0.3s ease;
+}
+
+#combo-registration-form input:focus,
+#combo-registration-form textarea:focus {
+    border-color: #8B4789;
+    box-shadow: 0 0 0 3px rgba(139, 71, 137, 0.1);
+    transform: translateY(-2px);
+}
+
+#combo-registration-form button[type="submit"] {
+    position: relative;
+    overflow: hidden;
+}
+
+#combo-registration-form button[type="submit"]::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+#combo-registration-form button[type="submit"]:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* Countdown Timer Animation */
+#combo-countdown > div {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+#combo-countdown > div:nth-child(1) {
+    animation-delay: 0s;
+}
+
+#combo-countdown > div:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+#combo-countdown > div:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+#combo-countdown > div:nth-child(4) {
+    animation-delay: 0.6s;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* Countdown seconds special animation */
+#countdown-seconds {
+    animation: blink 1s ease-in-out infinite;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+/* Form validation styles */
+#combo-registration-form input:invalid:not(:placeholder-shown),
+#combo-registration-form textarea:invalid:not(:placeholder-shown) {
+    border-color: #ef4444;
+}
+
+#combo-registration-form input:valid:not(:placeholder-shown),
+#combo-registration-form textarea:valid:not(:placeholder-shown) {
+    border-color: #10b981;
+}
+
+/* Alert message animation */
+.bg-yellow-50 {
+    animation: fadeInDown 0.5s ease-out;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Footer Styles */
+footer {
+    position: relative;
+    overflow: hidden;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(139, 71, 137, 0.1) 0%, rgba(233, 30, 99, 0.1) 100%);
+    pointer-events: none;
+}
+
+footer .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Footer Contact Cards Hover Effect */
+footer .bg-white\/5:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+}
+
+/* Footer Social Icons Animation */
+footer .flex.justify-center.space-x-4 a {
+    position: relative;
+    overflow: hidden;
+}
+
+footer .flex.justify-center.space-x-4 a::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%);
+    transition: width 0.4s, height 0.4s;
+}
+
+footer .flex.justify-center.space-x-4 a:hover::before {
+    width: 100%;
+    height: 100%;
+}
+
+/* Footer Logo Animation */
+footer img {
+    transition: transform 0.3s ease;
+}
+
+footer img:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Footer Disclaimer Box */
+footer .bg-yellow-900\/20 {
+    transition: all 0.3s ease;
+}
+
+footer .bg-yellow-900\/20:hover {
+    background: rgba(133, 77, 14, 0.3);
+    border-color: rgba(202, 138, 4, 0.5);
+}
+
+/* Footer Contact Icon Animation */
+footer .w-12.h-12.rounded-full {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+footer .w-12.h-12.rounded-full:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(139, 71, 137, 0.4);
+}
+
+/* Footer Links Hover Effect */
+footer a:not(.w-12) {
+    position: relative;
+    display: inline-block;
+}
+
+footer a:not(.w-12)::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background: linear-gradient(90deg, #8B4789, #E91E63);
+    transition: width 0.3s ease;
+}
+
+footer a:not(.w-12):hover::after {
+    width: 100%;
+}
+
+/* Footer Gradient Background Animation */
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+footer {
+    background-size: 200% 200%;
+    animation: gradientShift 15s ease infinite;
+}
+
